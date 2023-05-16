@@ -1,0 +1,89 @@
+<!--
+ID : M22W7547
+Name: Mirissa Wellalage Tashmika Isuri
+
+-->
+
+<html>
+<head>
+	<title> ASSIGMENT_1 </title>
+	
+</head>
+<body>
+	<script>
+	var students =[["Wang",80 ],["Chen", 75],["Zhao", 92],["Liu",60],["Yamamoto",91],["Tanaka",82]];
+	var showstr ="";
+	var showGradeStr = "";
+	var showSortStr = "";
+	var grade = [];
+	var totalScore = 0;
+	
+	for(var i=0;i<students.length;i++){
+		for(var j=0;j<students[i].length;j++){
+			showstr += students[i][j];
+			showstr +=" ";
+			
+			// check student score 
+			if (students[i][j] >= 90 ){
+				grade.push(students[i]);
+				document.write("<br> <br>"); 
+	
+			}
+			
+			
+		}
+		showstr +="<br/>";
+		totalScore = totalScore + students[i][1];
+	}
+	
+	document.write("There are six students. Their scores are as follows <br>");
+	
+	// printing all students
+	document.write(showstr); 
+	document.write("<br> <br>");
+	for(var i=0;i<grade.length;i++){
+		for(var j=0;j<grade[i].length;j++){
+			showGradeStr += grade[i][j];
+			showGradeStr +=" ";		
+		}
+		showGradeStr +="<br/>";
+	}
+
+	
+	// printing students scores is more than 90
+	document.write("The following students are students who can get A <br>");
+	document.write(showGradeStr);
+	
+	document.write("<br>");
+	
+	// printing total score
+	document.write("Total score is " + totalScore);
+	
+	document.write("<br>");
+	
+	// printing average
+	document.write("The average score is " + totalScore / students.length);
+	
+	document.write("<br>");
+	
+	// ptinting in descending order
+	students.sort(function(a, b) {
+		return b[1] - a[1];
+	});
+	for(var i=0;i<students.length;i++){
+		for(var j=0;j<students[i].length;j++){
+			showSortStr += students[i][j];
+			showSortStr +=" ";			
+		}
+		showSortStr +="<br/>";
+	}
+	
+	document.write("<br>");
+	
+	document.write("Sort scores in descending order <br>");
+	
+	document.write(showSortStr);
+	
+	</script>
+</body>
+</html>	
